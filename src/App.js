@@ -12,6 +12,12 @@ class App extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    if (localStorage.getItem("note") != null) {
+      this.setState({ note: localStorage.getItem("note") });
+    }
+  }
+
   handleChange(event) {
     this.setState({ note: event.target.value });
   }
